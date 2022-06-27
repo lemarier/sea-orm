@@ -243,7 +243,10 @@ mod tests {
             make_col!("CakeFillingId", ColumnType::BigUnsigned(Some(12))),
             make_col!("cake-filling-id", ColumnType::Float(None)),
             make_col!("CAKE_FILLING_ID", ColumnType::Double(None)),
-            make_col!("CAKE-FILLING-ID", ColumnType::Binary(None)),
+            make_col!(
+                "CAKE-FILLING-ID",
+                ColumnType::Binary(sea_query::BlobSize::Blob(None))
+            ),
             make_col!("CAKE", ColumnType::Boolean),
             make_col!("date", ColumnType::Date),
             make_col!("time", ColumnType::Time(None)),

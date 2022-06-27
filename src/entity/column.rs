@@ -382,7 +382,7 @@ impl From<ColumnType> for sea_query::ColumnType {
             ColumnType::TimestampWithTimeZone => sea_query::ColumnType::TimestampWithTimeZone(None),
             ColumnType::Time => sea_query::ColumnType::Time(None),
             ColumnType::Date => sea_query::ColumnType::Date,
-            ColumnType::Binary => sea_query::ColumnType::Binary(None),
+            ColumnType::Binary => sea_query::ColumnType::Binary(sea_query::BlobSize::Blob(None)),
             ColumnType::Boolean => sea_query::ColumnType::Boolean,
             ColumnType::Money(s) => sea_query::ColumnType::Money(s),
             ColumnType::Json => sea_query::ColumnType::Json,
